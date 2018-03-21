@@ -15,13 +15,16 @@ const newPerson = () => {
   return {
     firstName: namor.generate({ words: 1, numbers: 0 }),
     lastName: namor.generate({ words: 1, numbers: 0 }),
+    aerrt_flag: "Yes",
+    req_code: "ER_2009",
+    exam_code: "EX_51",
+    reg_req_no: "Ravikanth Muliptle testing",
+    description: "Some dummy description",
+    status: "PENDING_REVIEW_RRL",
+    due_date: "Mar 19, 2018",
     age: Math.floor(Math.random() * 30),
     visits: Math.floor(Math.random() * 100),
-    progress: Math.floor(Math.random() * 100),
-    status:
-      statusChance > 0.66
-        ? "relationship"
-        : statusChance > 0.33 ? "complicated" : "single"
+    progress: Math.floor(Math.random() * 100)
   };
 };
 

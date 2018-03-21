@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import { makeData, Logo, Tips } from "./Utils";
-import { Label, Container } from 'semantic-ui-react'
+import { Label, List } from 'semantic-ui-react'
 
 // Import React Table
 import ReactTable from "react-table";
@@ -34,78 +34,76 @@ class App extends React.Component {
       <div>
         <ReactTable
           data={data}
-          columns={[{
-      Header: 'Name',
-      columns: [{
-        Header: 'First Name',
-        accessor: 'firstName'
-      }, {
-        Header: 'Last Name',
-        id: 'lastName',
-        accessor: d => d.lastName
-      }]
-    }, {
-      Header: 'Info',
-      columns: [{
-        Header: 'Profile Progress',
-        accessor: 'progress',
-        Cell: row => (
-          <Container text>
-          <div>
-            <Label as='a' image>
-              Joe
-            </Label>
-            <Label as='a' image>
-              Elliot
-            </Label>
-            <Label as='a' image>
-              Stevie
-            </Label>
-            <Label as='a' image>
-              Stevie
-            </Label>
-            <Label as='a' image>
-              Stevie
-            </Label>
-            <Label as='a' image>
-              Stevie
-            </Label>
-            <Label as='a' image>
-              Stevie
-            </Label>
-            <Label as='a' image>
-              Stevie
-            </Label>
-            <Label as='a' image>
-              Stevie
-            </Label>
-          </div>
-          </Container>
-        )
-      }, {
-        Header: 'Status',
-        accessor: 'status',
-        Cell: row => (
-          <span>
-            <span style={{
-              color: row.value === 'relationship' ? '#ff2e00'
-                : row.value === 'complicated' ? '#ffbf00'
-                : '#57d500',
-              transition: 'all .3s ease'
-            }}>
-              &#x25cf;
-            </span> {
-              row.value === 'relationship' ? 'In a relationship'
-              : row.value === 'complicated' ? `It's complicated`
-              : 'Single'
-            }
-          </span>
-        )
-      }]
+          columns={[
+            {
+         Header: 'Name',
+      columns: [
+        {
+          Header: 'Req Code',
+          accessor: 'firstName',
+          width: 120
+        }, 
+      
+        {
+          Header: 'Exam Code',
+          accessor: 'firstName',
+          width: 120
+        },
+        {
+          Header: 'Reg. Req. No.',
+          accessor: 'reg_req_number',
+          width: 85
+        },
+        {
+          Header: 'Name',
+          accessor: 'name',
+          width: 85
+        },
+        {
+          Header: 'Description',
+          accessor: 'description',
+          width: 85
+        },
+        {
+          Header: 'Status',
+          accessor: 'status',
+          width: 85
+        },
+        {
+          Header: 'AERRT Flag',
+          accessor: 'aerrt_flag',
+          width: 85
+        },
+        {
+          Header: 'Due Date',
+          accessor: 'due_date',
+          width: 120
+        },
+        {
+          Header: 'Due Date',
+          accessor: 'due_date',
+          width: 120
+        },
+        {
+          Header: 'Stakeholders',
+          accessor: 'status',
+          width: 20,
+          Cell: row => (
+            <div>
+              <List>
+                <List.Item>jolchu,ragudipati,</List.Item>
+                <List.Item>chchau,seafreeman,</List.Item>
+                <List.Item>dwager,viesposito</List.Item>
+              </List>
+            </div>
+          )
+        }
+        
+      ]
     }]}
-          defaultPageSize={10}
-          className="-striped -highlight"
-        />
+    defaultPageSize={10}
+    className="-striped -highlight"
+    />
         <br />
         <Tips />
         <Logo />
