@@ -79,9 +79,9 @@ class App extends React.Component {
                 Cell: row => (
                   <div>
                     <List>
-                      <List.Item>jolchu,ragudipati,</List.Item>
-                      <List.Item>chchau,seafreeman,</List.Item>
-                      <List.Item>dwager,viesposito</List.Item>
+                      <List.Item>asdfke,ravikanth,</List.Item>
+                      <List.Item>sholmes,jamesbond,</List.Item>
+                      <List.Item>jwatson,jakeLamotta</List.Item>
                     </List>
                   </div>
                 )
