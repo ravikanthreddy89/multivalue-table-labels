@@ -13,12 +13,13 @@ const range = len => {
 const newPerson = () => {
   const statusChance = Math.random();
   return {
+    name: namor.generate({ words: 1, numbers: 0 }),
     firstName: namor.generate({ words: 1, numbers: 0 }),
     lastName: namor.generate({ words: 1, numbers: 0 }),
     aerrt_flag: "Yes",
     req_code: "ER_2009",
     exam_code: "EX_51",
-    reg_req_no: "Ravikanth Muliptle testing",
+    reg_req_number: "Ravikanth Muliptle testing",
     description: "Some dummy description",
     status: "PENDING_REVIEW_RRL",
     due_date: "Mar 19, 2018",
@@ -37,19 +38,29 @@ export function makeData(len = 5553) {
   });
 }
 
-export const Logo = () =>
-  <div style={{ margin: '1rem auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center'}}>
-    For more examples, visit {''}
-  <br />
+export const Logo = () => (
+  <div
+    style={{
+      margin: "1rem auto",
+      display: "flex",
+      flexWrap: "wrap",
+      alignItems: "center",
+      justifyContent: "center"
+    }}
+  >
+    For more examples, visit {""}
+    <br />
     <a href="https://github.com/react-tools/react-table" target="_blank">
       <img
         src="https://github.com/react-tools/media/raw/master/logo-react-table.png"
         style={{ width: `150px`, margin: ".5em auto .3em" }}
       />
     </a>
-  </div>;
+  </div>
+);
 
-export const Tips = () =>
+export const Tips = () => (
   <div style={{ textAlign: "center" }}>
     <em>Tip: Hold shift when sorting to multi-sort!</em>
-  </div>;
+  </div>
+);

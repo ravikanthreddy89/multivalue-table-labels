@@ -34,73 +34,61 @@ class App extends React.Component {
       <div>
         <ReactTable
           data={data}
-          columns={[
-            {
-         Header: 'Name',
-      columns: [
-        {
-          Header: 'Req Code',
-          accessor: 'firstName',
-          width: 120
-        }, 
-      
-        {
-          Header: 'Exam Code',
-          accessor: 'firstName',
-          width: 120
-        },
-        {
-          Header: 'Reg. Req. No.',
-          accessor: 'reg_req_number',
-          width: 85
-        },
-        {
-          Header: 'Name',
-          accessor: 'name',
-          width: 85
-        },
-        {
-          Header: 'Description',
-          accessor: 'description',
-          width: 85
-        },
-        {
-          Header: 'Status',
-          accessor: 'status',
-          width: 85
-        },
-        {
-          Header: 'AERRT Flag',
-          accessor: 'aerrt_flag',
-          width: 85
-        },
-        {
-          Header: 'Due Date',
-          accessor: 'due_date',
-          width: 120
-        },
-        {
-          Header: 'Due Date',
-          accessor: 'due_date',
-          width: 120
-        },
-        {
-          Header: 'Stakeholders',
-          accessor: 'status',
-          width: 20,
-          Cell: row => (
-            <div>
-              <List>
-                <List.Item>jolchu,ragudipati,</List.Item>
-                <List.Item>chchau,seafreeman,</List.Item>
-                <List.Item>dwager,viesposito</List.Item>
-              </List>
-            </div>
-          )
-        }
-        
-      ]
-    }]}
+          columns={
+            [
+              {
+                Header: 'Req Code',
+                accessor: 'req_code',
+                maxWidth: 80
+              },
+
+              {
+                Header: 'Exam Code',
+                accessor: 'exam_code',
+                maxWidth: 90
+              },
+              {
+                Header: 'Reg. Req. No.',
+                accessor: 'reg_req_number'
+              },
+              {
+                Header: 'Name',
+                accessor: 'name'
+              },
+              {
+                Header: 'Description',
+                accessor: 'description'
+              },
+              {
+                Header: 'Status',
+                accessor: 'status'
+              },
+              {
+                Header: 'AERRT Flag',
+                accessor: 'aerrt_flag',
+                maxWidth: 85
+              },
+              {
+                Header: 'Due Date',
+                accessor: 'due_date',
+                maxWidth: 120
+              },
+              {
+                Header: 'Stakeholders',
+                accessor: 'status',
+                Cell: row => (
+                  <div>
+                    <List>
+                      <List.Item>jolchu,ragudipati,</List.Item>
+                      <List.Item>chchau,seafreeman,</List.Item>
+                      <List.Item>dwager,viesposito</List.Item>
+                    </List>
+                  </div>
+                )
+              }
+
+            ]
+          }
     defaultPageSize={10}
     className="-striped -highlight"
     />
