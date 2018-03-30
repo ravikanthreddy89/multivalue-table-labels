@@ -19,7 +19,8 @@ import '../node_modules/semantic-ui-css/components/flag.min.css';
 import '../node_modules/semantic-ui-css/components/loader.min.css';
 import '../node_modules/semantic-ui-css/components/breadcrumb.min.css';
 import '../node_modules/semantic-ui-css/components/image.min.css';
-
+import _ from 'lodash';
+import matchSorter from 'match-sorter';
 
 class App extends React.Component {
   constructor() {
@@ -45,7 +46,24 @@ class App extends React.Component {
               {
                 Header: 'Exam Code',
                 accessor: 'exam_code',
-                maxWidth: 90
+                maxWidth: 90,
+                filterAll: true,
+                filterMethod: (filter, rows, column) => {
+                   return matchSorter(rows, filter.value, 
+                   {
+                     keys: [
+                       {
+                         key: filter.id,
+                         threshold: matchSorter.rankings.EQUAL,
+                         minRanking: matchSorter.rankings.EQUAL,
+                         maxRanking: matchSorter.rankings.EQUAL,
+                       }
+                     ]
+                   }
+                   );
+
+                },
+                filterable: true
               },
               {
                 Header: 'Reg. Req. No.',
@@ -53,7 +71,14 @@ class App extends React.Component {
               },
               {
                 Header: 'Name',
-                accessor: 'name'
+                accessor: 'name',
+                filterMethod: (filter, row) => {
+                  //return row[filter.id].startsWith(filter.value);
+                  return _.includes(row[filter.id].toUpperCase(), filter.value.toUpperCase() );
+                  //return row[filter.id].toUpperCase() === filter.value.toUpperCase();
+                
+                },
+                filterable: true
               },
               {
                 Header: 'Description',
@@ -79,9 +104,9 @@ class App extends React.Component {
                 Cell: row => (
                   <div>
                     <List>
-                      <List.Item>jolchu,ragudipati,</List.Item>
-                      <List.Item>chchau,seafreeman,</List.Item>
-                      <List.Item>dwager,viesposito</List.Item>
+                      <List.Item>gixer,monster,</List.Item>
+                      <List.Item>multistrada,1200gs,</List.Item>
+                      <List.Item>brutale,bonnie</List.Item>
                     </List>
                   </div>
                 )

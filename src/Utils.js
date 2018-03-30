@@ -18,7 +18,7 @@ const newPerson = () => {
     lastName: namor.generate({ words: 1, numbers: 0 }),
     aerrt_flag: "Yes",
     req_code: "ER_2009",
-    exam_code: "EX_51",
+    exam_code: "EX_"+ Math.floor(Math.random() * 30),
     reg_req_number: "Ravikanth Muliptle testing",
     description: "Some dummy description",
     status: "PENDING_REVIEW_RRL",
@@ -29,7 +29,7 @@ const newPerson = () => {
   };
 };
 
-export function makeData(len = 5553) {
+export function makeData(len = 100) {
   return range(len).map(d => {
     return {
       ...newPerson(),
