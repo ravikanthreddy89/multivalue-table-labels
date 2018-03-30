@@ -107,7 +107,7 @@ class App extends React.Component {
                       <List.Item>gixer,monster,</List.Item>
                       <List.Item>multistrada,1200gs,</List.Item>
                       <List.Item>brutale,bonnie</List.Item>
-                    </List>
+                  </List>
                   </div>
                 )
               }
